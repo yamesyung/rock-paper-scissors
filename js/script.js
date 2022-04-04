@@ -1,4 +1,3 @@
-const playerSelection = "Scissors";
 
 
 function computerPlay() {
@@ -35,10 +34,17 @@ function playRound(playerSelection, computerSelection) {
         }
         else return ("You won! Scissors beats paper.")
     }
+
+    return("Please add one of the choices")
 }
   
+function titleCase(playerSelection){
+    return playerSelection[0].toUpperCase() + playerSelection.slice(1).toLowerCase();
+}
+
 function game(){
     for (let i = 0; i<5; i++) {
+        const playerSelection = titleCase(prompt("Add you option:Rock,Paper,Scissors"));
         const computerSelection = computerPlay();
         computerPlay();
         playRound(playerSelection, computerSelection);
@@ -48,7 +54,6 @@ function game(){
     }
 }
 
-
   
   game();
-    
+  console.log("The final score is:");
