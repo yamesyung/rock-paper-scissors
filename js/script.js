@@ -1,11 +1,10 @@
-console.log("Hello world")
+const playerSelection = "Scissors";
+
 
 function computerPlay() {
     let options = ["Rock","Paper", "Scissors"];
     let randomIndex = Math.floor(Math.random() * options.length); 
     let computerOption = options[randomIndex];
-
-    console.log (computerOption)
 
     return computerOption;
 
@@ -38,6 +37,18 @@ function playRound(playerSelection, computerSelection) {
     }
 }
   
-  const playerSelection = "Rock";
-  const computerSelection = computerPlay();
-  console.log(playRound(playerSelection, computerSelection));
+function game(){
+    for (let i = 0; i<5; i++) {
+        const computerSelection = computerPlay();
+        computerPlay();
+        playRound(playerSelection, computerSelection);
+        console.log(playRound(playerSelection,computerSelection))
+        
+        
+    }
+}
+
+
+  
+  game();
+    
