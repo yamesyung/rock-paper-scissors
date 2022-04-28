@@ -1,2 +1,2 @@
 # rock-paper-scissors
-A web-based game of rock-paper-scissors on console
+A game of rock-paper-scissors with GUI!

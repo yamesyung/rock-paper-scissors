@@ -51,7 +51,7 @@ function titleCase(playerSelection){
 function game(){
     let playerScore = 0;
     let computerScore = 0;
-    for (let i = 0; i<5; i++) {
+    
         const playerSelection = titleCase(prompt("Add you option:Rock,Paper,Scissors"));
         const computerSelection = computerPlay();
         computerPlay();
@@ -65,7 +65,7 @@ function game(){
         if (playRound(playerSelection, computerSelection).includes("lose")) {
             computerScore = computerScore+1;
         }
-    }
+    
     console.log(`The final score is: ` + playerScore + ` : ` + computerScore);
 }
 
