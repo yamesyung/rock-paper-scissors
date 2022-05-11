@@ -9,6 +9,27 @@ function computerPlay() {
 
 }
 
+const rock = document.querySelector('#rock');
+rock.addEventListener('click' , () => {
+    const computerSelection = computerPlay();
+    playRound("Rock", computerSelection);
+    console.log(playRound("Rock",computerSelection));
+});
+
+const paper = document.querySelector('#paper');
+paper.addEventListener('click' , () => {
+    const computerSelection = computerPlay();
+    playRound("Paper", computerSelection);
+    console.log(playRound("Paper",computerSelection));
+});
+
+const scissors = document.querySelector('#scissors');
+scissors.addEventListener('click' , () => {
+    const computerSelection = computerPlay();
+    playRound("Scissors", computerSelection);
+    console.log(playRound("Scissors",computerSelection));
+});
+
 //compares the strings from user input and computer option and returns a proper message for each situation
 function playRound(playerSelection, computerSelection) {                
     if (playerSelection == computerSelection) {                         
@@ -39,20 +60,13 @@ function playRound(playerSelection, computerSelection) {
     return("Please add one of the choices")
 }
 
-//standardize the user input, capitalise first letter, however it throws an error when dealing with empty string or the user prompt gets cancelled
-function titleCase(playerSelection){
-    if (typeof playerSelection !== "undefined"){
-        return playerSelection[0].toUpperCase() + playerSelection.slice(1).toLowerCase()
-    }
-     return("Your entry is empty")
-}
 
 //5 rounds, score gets initialized, display score at the end
 function game(){
     let playerScore = 0;
     let computerScore = 0;
     
-        const playerSelection = titleCase(prompt("Add you option:Rock,Paper,Scissors"));
+        //const playerSelection = titleCase(prompt("Add you option:Rock,Paper,Scissors"));
         const computerSelection = computerPlay();
         computerPlay();
         playRound(playerSelection, computerSelection);
@@ -70,4 +84,4 @@ function game(){
 }
 
   
-  game();
+ // game();
