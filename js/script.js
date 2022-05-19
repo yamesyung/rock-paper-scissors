@@ -86,31 +86,18 @@ function playRound(playerSelection, computerSelection) {
         }
     }
 
+    if (playerScore == 5) {
+        let para = document.createElement("p");
+        para.textContent = "You have won the game!";
+        let outcome = document.getElementById('divScore')
+        outcome.appendChild(para);
+    }
 
+    else if (computerScore == 5) {
+        let para = document.createElement("p");
+        para.textContent = "You lost the game.";
+        let outcome = document.getElementById('divScore')
+        outcome.appendChild(para);
 }
 
-
-//5 rounds, score gets initialized, display score at the end
-// function game(){
-//     let playerScore = 0;
-//     let computerScore = 0;
-    
-//         //const playerSelection = titleCase(prompt("Add you option:Rock,Paper,Scissors"));
-//         const computerSelection = computerPlay();
-//         computerPlay();
-//         playRound(playerSelection, computerSelection);
-//         console.log(playRound(playerSelection,computerSelection))
-        
-//         if (playRound(playerSelection, computerSelection).includes("won")) {
-//             playerScore = playerScore+1;
-
-//         }
-//         if (playRound(playerSelection, computerSelection).includes("lose")) {
-//             computerScore = computerScore+1;
-//         }
-    
-//     console.log(`The final score is: ` + playerScore + ` : ` + computerScore);
-// }
-
-  
- // game();
+}
