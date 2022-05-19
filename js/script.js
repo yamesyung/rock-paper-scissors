@@ -86,11 +86,28 @@ function playRound(playerSelection, computerSelection) {
         }
     }
 
+    let reloadWindow = () => {
+        location.reload();
+    }
+
+    let clearGame = () => {
+        playerScore = 0;
+        computerScore = 0;
+        let clean = document.getElementById('container');
+        clean.remove();
+        let button = document.createElement("button");
+        button.textContent = "Restart Game"; 
+        let btn = document.getElementById("btn")
+        btn.appendChild(button);
+        button.addEventListener("click", reloadWindow);
+    }
+
     if (playerScore == 5) {
         let para = document.createElement("p");
         para.textContent = "You have won the game!";
         let outcome = document.getElementById('divScore')
         outcome.appendChild(para);
+        clearGame();
     }
 
     else if (computerScore == 5) {
@@ -98,6 +115,12 @@ function playRound(playerSelection, computerSelection) {
         para.textContent = "You lost the game.";
         let outcome = document.getElementById('divScore')
         outcome.appendChild(para);
-}
+        clearGame();
+    }
+
+
+
+
 
 }
+
